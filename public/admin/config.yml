@@ -8,10 +8,13 @@ public_folder: "/images" # The src attribute for uploaded media will begin with 
 collections:
   - name: "portfolio"
     label: "Portfolio Settings"
-    file: "content/portfolio.json"
-    description: "General portfolio settings and information"
-    fields:
-      - {label: "Name", name: "name", widget: "string"}
+    files:
+      - name: "settings"
+        label: "General Settings"
+        file: "content/portfolio.json"
+        description: "General portfolio settings and information"
+        fields:
+          - {label: "Name", name: "name", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Bio", name: "bio", widget: "text"}
       - {label: "Profile Image", name: "profileImage", widget: "image"}
