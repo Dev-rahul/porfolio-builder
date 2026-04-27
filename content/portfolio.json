@@ -1,34 +1,35 @@
 {
-  "name": "Jane Doe",
-  "title": "Full Stack Developer",
-  "bio": "I'm a passionate full-stack developer with 5 years of experience building modern web applications. I specialize in React, Node.js, and cloud architecture.",
-  "profileImage": "/images/profile.jpg",
-  "email": "hello@janedoe.com",
-  "socialLinks": [
-    {
-      "platform": "GitHub",
-      "url": "https://github.com"
-    },
-    {
-      "platform": "LinkedIn",
-      "url": "https://linkedin.com"
-    }
-  ],
-  "theme": "minimal",
   "skills": [
     {
       "category": "Frontend",
-      "items": ["React", "Next.js", "TypeScript", "Tailwind CSS"]
+      "items": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS"
+      ]
     },
     {
       "category": "Backend",
-      "items": ["Node.js", "Express", "PostgreSQL", "MongoDB"]
+      "items": [
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "MongoDB"
+      ]
     },
     {
       "category": "Tools",
-      "items": ["Git", "Docker", "AWS", "Vercel"]
+      "items": [
+        "Git",
+        "Docker",
+        "AWS",
+        "Vercel"
+      ]
     }
   ],
+  "bio": "I'm a passionate full-stack developer with 5 years of experience building modern web applications. I specialize in React, Node.js, and cloud architecture.",
+  "theme": "minimal",
   "experience": [
     {
       "company": "Tech Corp",
@@ -42,5 +43,19 @@
       "duration": "2018 - 2020",
       "description": "Developed scalable microservices and REST APIs using Node.js."
     }
-  ]
+  ],
+  "name": "Jane Doe",
+  "socialLinks": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com"
+    }
+  ],
+  "profileImage": "/images/portfolio.jpg",
+  "title": "testing abc",
+  "email": "hello@janedoe.com"
 }
