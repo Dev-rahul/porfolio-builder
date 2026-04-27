@@ -1,4 +1,20 @@
 {
+  "name": "Rahul Murali",
+  "title": "Full Stack Developer",
+  "bio": "I'm a passionate full-stack developer with 5 years of experience building modern web applications. I specialize in React, Node.js, and cloud architecture.",
+  "profileImage": "/images/profile.jpg",
+  "email": "hello@rahulmurali.me",
+  "socialLinks": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/rahulmurali"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/rahulmurali"
+    }
+  ],
+  "theme": "minimal",
   "skills": [
     {
       "category": "Frontend",
@@ -28,8 +44,6 @@
       ]
     }
   ],
-  "bio": "I'm a passionate full-stack developer with 5 years of experience building modern web applications. I specialize in React, Node.js, and cloud architecture.",
-  "theme": "minimal",
   "experience": [
     {
       "company": "Tech Corp",
@@ -44,7 +58,6 @@
       "description": "Developed scalable microservices and REST APIs using Node.js."
     }
   ],
-<<<<<<< HEAD
   "education": [
     {
       "institution": "University of Technology",
@@ -67,20 +80,4 @@
       "url": "https://cloud.google.com/certification/"
     }
   ]
-=======
-  "name": "Jane Doe",
-  "socialLinks": [
-    {
-      "platform": "GitHub",
-      "url": "https://github.com"
-    },
-    {
-      "platform": "LinkedIn",
-      "url": "https://linkedin.com"
-    }
-  ],
-  "profileImage": "/images/portfolio.jpg",
-  "title": "testing abc",
-  "email": "hello@janedoe.com"
->>>>>>> 179cc1d8c2c66a32e6288ec13af9cec76884a116
 }
