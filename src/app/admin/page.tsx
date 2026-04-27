@@ -11,8 +11,33 @@ const cmsConfig = {
   public_folder: '/images',
   collections: [
     {
+      name: 'theme',
+      label: '🎨 Theme',
+      files: [
+        {
+          name: 'theme-settings',
+          label: 'Theme Selection',
+          file: 'content/theme.json',
+          description: 'Choose your portfolio theme',
+          fields: [
+            {
+              label: 'Theme',
+              name: 'theme',
+              widget: 'select',
+              options: [
+                { label: 'Minimal — Clean & typographic', value: 'minimal' },
+                { label: 'Modern — Cards & gradients', value: 'modern' },
+                { label: 'Developer — Dark & terminal', value: 'developer' },
+              ],
+              default: 'minimal',
+            },
+          ],
+        },
+      ],
+    },
+    {
       name: 'portfolio',
-      label: 'Portfolio Settings',
+      label: '📝 Portfolio Settings',
       files: [
         {
           name: 'settings',
@@ -33,13 +58,6 @@ const cmsConfig = {
                 { label: 'Platform', name: 'platform', widget: 'string' },
                 { label: 'URL', name: 'url', widget: 'string' },
               ],
-            },
-            {
-              label: 'Theme',
-              name: 'theme',
-              widget: 'select',
-              options: ['minimal', 'modern', 'developer'],
-              default: 'minimal',
             },
             {
               label: 'Skills',

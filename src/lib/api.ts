@@ -7,26 +7,40 @@ const contentDirectory = path.join(process.cwd(), 'content');
 const projectsDirectory = path.join(contentDirectory, 'projects');
 
 export function getPortfolioData(): PortfolioData {
-  const fullPath = path.join(contentDirectory, 'portfolio.json');
+  const portfolioPath = path.join(contentDirectory, 'portfolio.json');
+  const themePath = path.join(contentDirectory, 'theme.json');
+  
+  let portfolioData: Partial<PortfolioData> = {};
+  let theme: PortfolioData['theme'] = 'minimal';
+
   try {
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-    return JSON.parse(fileContents) as PortfolioData;
+    const fileContents = fs.readFileSync(portfolioPath, 'utf8');
+    portfolioData = JSON.parse(fileContents);
   } catch (error) {
     console.error("Error reading portfolio.json:", error);
-    // Return default empty data if it fails
-    return {
-      name: "Your Name",
-      title: "Your Title",
-      bio: "Your bio here.",
-      email: "hello@example.com",
-      socialLinks: [],
-      theme: "minimal",
-      skills: [],
-      experience: [],
-      education: [],
-      certifications: [],
-    };
   }
+
+  try {
+    const themeContents = fs.readFileSync(themePath, 'utf8');
+    const themeData = JSON.parse(themeContents);
+    theme = themeData.theme || 'minimal';
+  } catch (error) {
+    console.error("Error reading theme.json:", error);
+  }
+
+  return {
+    name: portfolioData.name || "Your Name",
+    title: portfolioData.title || "Your Title",
+    bio: portfolioData.bio || "Your bio here.",
+    profileImage: portfolioData.profileImage,
+    email: portfolioData.email || "hello@example.com",
+    socialLinks: portfolioData.socialLinks || [],
+    theme,
+    skills: portfolioData.skills || [],
+    experience: portfolioData.experience || [],
+    education: portfolioData.education || [],
+    certifications: portfolioData.certifications || [],
+  };
 }
 
 export function getProjects(): ProjectData[] {
