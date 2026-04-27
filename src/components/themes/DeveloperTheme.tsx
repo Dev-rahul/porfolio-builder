@@ -28,6 +28,15 @@ export default function DeveloperTheme({ data, projects }: ThemeProps) {
               <span className="text-cyan-400 mx-2">~</span>
               <span>whoami</span>
             </div>
+            {data.profileImage && (
+              <div className="mb-6">
+                <img
+                  src={data.profileImage}
+                  alt={data.name}
+                  className="w-20 h-20 rounded-full object-cover border-2 border-neutral-700 shadow-lg shadow-emerald-900/20"
+                />
+              </div>
+            )}
             <h1 className="text-4xl md:text-6xl font-bold mb-4 text-neutral-100">{data.name}</h1>
             <h2 className="text-xl md:text-2xl text-emerald-400 mb-6">{'>'} {data.title}</h2>
             <p className="text-neutral-400 leading-relaxed max-w-2xl text-lg">{data.bio}</p>

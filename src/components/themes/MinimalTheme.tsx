@@ -9,9 +9,19 @@ export default function MinimalTheme({ data, projects }: ThemeProps) {
         
         {/* Header Section */}
         <header className="mb-20">
+          {data.profileImage && (
+            <div className="mb-8">
+              <img
+                src={data.profileImage}
+                alt={data.name}
+                className="w-24 h-24 rounded-full object-cover border-2 border-gray-100 shadow-sm"
+              />
+            </div>
+          )}
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">{data.name}</h1>
           <h2 className="text-xl md:text-2xl text-gray-600 font-light mb-6">{data.title}</h2>
           <p className="text-lg text-gray-700 leading-relaxed max-w-2xl">{data.bio}</p>
+
           
           <div className="flex gap-4 mt-8">
             <a href={`mailto:${data.email}`} className="text-gray-600 hover:text-black transition-colors">

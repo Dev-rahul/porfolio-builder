@@ -9,6 +9,15 @@ export default function ModernTheme({ data, projects }: ThemeProps) {
       <section className="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 text-white py-24 px-6 mb-16 relative overflow-hidden">
         <div className="max-w-5xl mx-auto relative z-10">
           <div className="bg-white/10 backdrop-blur-md border border-white/20 p-8 md:p-12 rounded-3xl shadow-xl max-w-3xl">
+            {data.profileImage && (
+              <div className="mb-6">
+                <img
+                  src={data.profileImage}
+                  alt={data.name}
+                  className="w-20 h-20 rounded-full object-cover border-2 border-white/40 shadow-lg"
+                />
+              </div>
+            )}
             <h1 className="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-md">{data.name}</h1>
             <h2 className="text-xl md:text-3xl font-medium text-white/90 mb-6">{data.title}</h2>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">{data.bio}</p>

@@ -2,7 +2,7 @@
   "name": "Rahul Murali",
   "title": "Full Stack Developer",
   "bio": "I'm a passionate full-stack developer with 5 years of experience building modern web applications. I specialize in React, Node.js, and cloud architecture.",
-  "profileImage": "/images/profile.jpg",
+  "profileImage": "/images/profile.png",
   "email": "hello@rahulmurali.me",
   "socialLinks": [
     {
@@ -18,30 +18,15 @@
   "skills": [
     {
       "category": "Frontend",
-      "items": [
-        "React",
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS"
-      ]
+      "items": ["React", "Next.js", "TypeScript", "Tailwind CSS"]
     },
     {
       "category": "Backend",
-      "items": [
-        "Node.js",
-        "Express",
-        "PostgreSQL",
-        "MongoDB"
-      ]
+      "items": ["Node.js", "Express", "PostgreSQL", "MongoDB"]
     },
     {
       "category": "Tools",
-      "items": [
-        "Git",
-        "Docker",
-        "AWS",
-        "Vercel"
-      ]
+      "items": ["Git", "Docker", "AWS", "Vercel"]
     }
   ],
   "experience": [
