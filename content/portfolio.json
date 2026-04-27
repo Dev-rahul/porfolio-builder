@@ -18,15 +18,30 @@
   "skills": [
     {
       "category": "Frontend",
-      "items": ["React", "Next.js", "TypeScript", "Tailwind CSS"]
+      "items": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS"
+      ]
     },
     {
       "category": "Backend",
-      "items": ["Node.js", "Express", "PostgreSQL", "MongoDB"]
+      "items": [
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "MongoDB"
+      ]
     },
     {
       "category": "Tools",
-      "items": ["Git", "Docker", "AWS", "Vercel"]
+      "items": [
+        "Git",
+        "Docker",
+        "AWS",
+        "Vercel"
+      ]
     }
   ],
   "experience": [
