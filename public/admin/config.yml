@@ -15,34 +15,34 @@ collections:
         description: "General portfolio settings and information"
         fields:
           - {label: "Name", name: "name", widget: "string"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Bio", name: "bio", widget: "text"}
-      - {label: "Profile Image", name: "profileImage", widget: "image"}
-      - {label: "Email", name: "email", widget: "string"}
-      - label: "Social Links"
-        name: "socialLinks"
-        widget: "list"
-        fields:
-          - {label: "Platform", name: "platform", widget: "string"}
-          - {label: "URL", name: "url", widget: "string"}
-      - {label: "Theme", name: "theme", widget: "select", options: ["minimal", "modern", "developer"], default: "minimal"}
-      - label: "Skills"
-        name: "skills"
-        widget: "list"
-        fields:
-          - {label: "Category", name: "category", widget: "string"}
-          - label: "Items"
-            name: "items"
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Bio", name: "bio", widget: "text"}
+          - {label: "Profile Image", name: "profileImage", widget: "image"}
+          - {label: "Email", name: "email", widget: "string"}
+          - label: "Social Links"
+            name: "socialLinks"
             widget: "list"
-            field: {label: "Skill", name: "skill", widget: "string"}
-      - label: "Experience"
-        name: "experience"
-        widget: "list"
-        fields:
-          - {label: "Company", name: "company", widget: "string"}
-          - {label: "Role", name: "role", widget: "string"}
-          - {label: "Duration", name: "duration", widget: "string"}
-          - {label: "Description", name: "description", widget: "text"}
+            fields:
+              - {label: "Platform", name: "platform", widget: "string"}
+              - {label: "URL", name: "url", widget: "string"}
+          - {label: "Theme", name: "theme", widget: "select", options: ["minimal", "modern", "developer"], default: "minimal"}
+          - label: "Skills"
+            name: "skills"
+            widget: "list"
+            fields:
+              - {label: "Category", name: "category", widget: "string"}
+              - label: "Items"
+                name: "items"
+                widget: "list"
+                field: {label: "Skill", name: "skill", widget: "string"}
+          - label: "Experience"
+            name: "experience"
+            widget: "list"
+            fields:
+              - {label: "Company", name: "company", widget: "string"}
+              - {label: "Role", name: "role", widget: "string"}
+              - {label: "Duration", name: "duration", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
 
   - name: "projects"
     label: "Projects"
