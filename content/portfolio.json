@@ -28,6 +28,7 @@
       "items": ["Git", "Docker", "AWS", "Vercel"]
     }
   ],
+  "theme": "minimal",
   "experience": [
     {
       "company": "Tech Corp",
