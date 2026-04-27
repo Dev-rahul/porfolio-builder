@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 const cmsConfig = {
   backend: {
     name: 'git-gateway',
-    branch: 'main',
+    branch: 'master',
   },
   media_folder: 'public/images',
   public_folder: '/images',
