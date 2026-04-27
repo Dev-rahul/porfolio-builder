@@ -42,5 +42,27 @@
       "duration": "2018 - 2020",
       "description": "Developed scalable microservices and REST APIs using Node.js."
     }
+  ],
+  "education": [
+    {
+      "institution": "University of Technology",
+      "degree": "Bachelor of Science",
+      "field": "Computer Science",
+      "duration": "2014 - 2018"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "AWS Certified Solutions Architect",
+      "issuer": "Amazon Web Services",
+      "date": "2023",
+      "url": "https://aws.amazon.com/certification/"
+    },
+    {
+      "name": "Google Professional Cloud Developer",
+      "issuer": "Google Cloud",
+      "date": "2022",
+      "url": "https://cloud.google.com/certification/"
+    }
   ]
 }

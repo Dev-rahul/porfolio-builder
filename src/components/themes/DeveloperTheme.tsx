@@ -1,5 +1,5 @@
 import { ThemeProps } from './types';
-import { Globe, Mail, Terminal, ChevronRight } from 'lucide-react';
+import { Globe, Mail, Terminal, ChevronRight, GraduationCap, Award } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
 export default function DeveloperTheme({ data, projects }: ThemeProps) {
@@ -36,15 +36,11 @@ export default function DeveloperTheme({ data, projects }: ThemeProps) {
               <a href={`mailto:${data.email}`} className="text-neutral-400 hover:text-emerald-400 transition-colors flex items-center gap-2">
                 <Mail className="w-5 h-5" /> <span>Email</span>
               </a>
-              {data.socialLinks.map((link) => {
-                const Icon = link.platform.toLowerCase() === 'github' ? Globe : 
-                             link.platform.toLowerCase() === 'linkedin' ? Globe : Globe;
-                return Icon ? (
-                  <a key={link.platform} href={link.url} target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-emerald-400 transition-colors flex items-center gap-2">
-                    <Icon className="w-5 h-5" /> <span>{link.platform}</span>
-                  </a>
-                ) : null;
-              })}
+              {data.socialLinks.map((link) => (
+                <a key={link.platform} href={link.url} target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-emerald-400 transition-colors flex items-center gap-2">
+                  <Globe className="w-5 h-5" /> <span>{link.platform}</span>
+                </a>
+              ))}
             </div>
           </header>
 
@@ -65,6 +61,55 @@ export default function DeveloperTheme({ data, projects }: ThemeProps) {
                       <div className="text-cyan-400 text-sm mt-1 md:mt-0">[{exp.duration}]</div>
                     </div>
                     <p className="text-neutral-400">{exp.description}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Education Section */}
+          {data.education?.length > 0 && (
+            <section className="mb-12">
+              <div className="flex items-center text-neutral-500 mb-6">
+                <span className="text-emerald-500 font-bold">➜</span>
+                <span className="text-cyan-400 mx-2">~</span>
+                <span>cat education.txt</span>
+              </div>
+              <div className="space-y-6 pl-4 border-l border-neutral-800">
+                {data.education.map((edu, i) => (
+                  <div key={i} className="relative">
+                    <div className="absolute -left-5 top-1.5 w-2 h-2 bg-cyan-500 rounded-full"></div>
+                    <div className="flex flex-col md:flex-row md:items-center justify-between mb-1">
+                      <h4 className="text-xl font-bold text-neutral-200">{edu.degree} <span className="text-neutral-500 font-normal">in {edu.field}</span></h4>
+                      <div className="text-cyan-400 text-sm mt-1 md:mt-0">[{edu.duration}]</div>
+                    </div>
+                    <div className="text-neutral-400">{edu.institution}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Certifications Section */}
+          {data.certifications?.length > 0 && (
+            <section className="mb-12">
+              <div className="flex items-center text-neutral-500 mb-6">
+                <span className="text-emerald-500 font-bold">➜</span>
+                <span className="text-cyan-400 mx-2">~</span>
+                <span>ls -la ./certifications</span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pl-4">
+                {data.certifications.map((cert, i) => (
+                  <div key={i} className="bg-neutral-900 border border-neutral-800 p-4 rounded hover:border-emerald-500/30 transition-colors">
+                    <div className="text-emerald-400 text-xs mb-2">-rw-r--r-- CERT</div>
+                    {cert.url ? (
+                      <a href={cert.url} target="_blank" rel="noopener noreferrer" className="font-bold text-neutral-200 hover:text-emerald-400 transition-colors">
+                        {cert.name}
+                      </a>
+                    ) : (
+                      <div className="font-bold text-neutral-200">{cert.name}</div>
+                    )}
+                    <div className="text-neutral-500 text-sm mt-1">{cert.issuer} · {cert.date}</div>
                   </div>
                 ))}
               </div>

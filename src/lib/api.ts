@@ -22,7 +22,9 @@ export function getPortfolioData(): PortfolioData {
       socialLinks: [],
       theme: "minimal",
       skills: [],
-      experience: []
+      experience: [],
+      education: [],
+      certifications: [],
     };
   }
 }

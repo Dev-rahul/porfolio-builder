@@ -66,6 +66,28 @@ const cmsConfig = {
                 { label: 'Description', name: 'description', widget: 'text' },
               ],
             },
+            {
+              label: 'Education',
+              name: 'education',
+              widget: 'list',
+              fields: [
+                { label: 'Institution', name: 'institution', widget: 'string' },
+                { label: 'Degree', name: 'degree', widget: 'string' },
+                { label: 'Field of Study', name: 'field', widget: 'string' },
+                { label: 'Duration', name: 'duration', widget: 'string' },
+              ],
+            },
+            {
+              label: 'Certifications',
+              name: 'certifications',
+              widget: 'list',
+              fields: [
+                { label: 'Name', name: 'name', widget: 'string' },
+                { label: 'Issuer', name: 'issuer', widget: 'string' },
+                { label: 'Date', name: 'date', widget: 'string' },
+                { label: 'URL', name: 'url', widget: 'string', required: false },
+              ],
+            },
           ],
         },
       ],

@@ -1,5 +1,5 @@
 import { ThemeProps } from './types';
-import { Globe, Mail, ExternalLink, Code } from 'lucide-react';
+import { Globe, Mail, ExternalLink, Code, GraduationCap, Award } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
 export default function ModernTheme({ data, projects }: ThemeProps) {
@@ -17,15 +17,11 @@ export default function ModernTheme({ data, projects }: ThemeProps) {
               <a href={`mailto:${data.email}`} className="bg-white text-indigo-600 hover:bg-indigo-50 px-6 py-3 rounded-full font-semibold transition-colors flex items-center gap-2 shadow-lg">
                 <Mail className="w-5 h-5" /> Get in touch
               </a>
-              {data.socialLinks.map((link) => {
-                const Icon = link.platform.toLowerCase() === 'github' ? Globe : 
-                             link.platform.toLowerCase() === 'linkedin' ? Globe : Globe;
-                return Icon ? (
-                  <a key={link.platform} href={link.url} target="_blank" rel="noopener noreferrer" className="bg-white/20 hover:bg-white/30 text-white px-4 py-3 rounded-full transition-colors flex items-center justify-center backdrop-blur-sm border border-white/10">
-                    <Icon className="w-5 h-5" />
-                  </a>
-                ) : null;
-              })}
+              {data.socialLinks.map((link) => (
+                <a key={link.platform} href={link.url} target="_blank" rel="noopener noreferrer" className="bg-white/20 hover:bg-white/30 text-white px-4 py-3 rounded-full transition-colors flex items-center justify-center backdrop-blur-sm border border-white/10" title={link.platform}>
+                  <Globe className="w-5 h-5" />
+                </a>
+              ))}
             </div>
           </div>
         </div>
@@ -56,6 +52,66 @@ export default function ModernTheme({ data, projects }: ThemeProps) {
                     </div>
                   </div>
                   <p className="text-slate-600 leading-relaxed">{exp.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Education Section */}
+        {data.education?.length > 0 && (
+          <section>
+            <div className="flex items-center gap-4 mb-10">
+              <div className="w-12 h-1 bg-emerald-500 rounded"></div>
+              <h3 className="text-3xl font-bold text-slate-800">Education</h3>
+            </div>
+            <div className="grid gap-6">
+              {data.education.map((edu, i) => (
+                <div key={i} className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow flex items-start gap-6">
+                  <div className="bg-emerald-50 text-emerald-600 p-3 rounded-xl shrink-0">
+                    <GraduationCap className="w-6 h-6" />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between">
+                      <div>
+                        <h4 className="text-xl font-bold text-slate-800">{edu.degree} in {edu.field}</h4>
+                        <div className="text-emerald-600 font-medium">{edu.institution}</div>
+                      </div>
+                      <div className="bg-slate-100 text-slate-600 px-4 py-1.5 rounded-full text-sm font-medium mt-2 md:mt-0 w-fit">
+                        {edu.duration}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Certifications Section */}
+        {data.certifications?.length > 0 && (
+          <section>
+            <div className="flex items-center gap-4 mb-10">
+              <div className="w-12 h-1 bg-amber-500 rounded"></div>
+              <h3 className="text-3xl font-bold text-slate-800">Certifications</h3>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              {data.certifications.map((cert, i) => (
+                <div key={i} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow flex items-start gap-4">
+                  <div className="bg-amber-50 text-amber-500 p-3 rounded-xl shrink-0">
+                    <Award className="w-6 h-6" />
+                  </div>
+                  <div>
+                    {cert.url ? (
+                      <a href={cert.url} target="_blank" rel="noopener noreferrer" className="font-bold text-slate-800 hover:text-indigo-600 transition-colors">
+                        {cert.name}
+                      </a>
+                    ) : (
+                      <div className="font-bold text-slate-800">{cert.name}</div>
+                    )}
+                    <div className="text-slate-500 text-sm mt-1">{cert.issuer}</div>
+                    <div className="text-amber-500 text-xs font-medium mt-1">{cert.date}</div>
+                  </div>
                 </div>
               ))}
             </div>

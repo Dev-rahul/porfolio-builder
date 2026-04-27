@@ -15,6 +15,20 @@ export interface Experience {
   description: string;
 }
 
+export interface Education {
+  institution: string;
+  degree: string;
+  field: string;
+  duration: string;
+}
+
+export interface Certification {
+  name: string;
+  issuer: string;
+  date: string;
+  url?: string;
+}
+
 export interface PortfolioData {
   name: string;
   title: string;
@@ -25,6 +39,8 @@ export interface PortfolioData {
   theme: 'minimal' | 'modern' | 'developer';
   skills: SkillCategory[];
   experience: Experience[];
+  education: Education[];
+  certifications: Certification[];
 }
 
 export interface ProjectData {
@@ -37,3 +53,4 @@ export interface ProjectData {
   githubLink?: string;
   body: string;
 }
+

@@ -1,5 +1,5 @@
 import { ThemeProps } from './types';
-import { Globe, Mail } from 'lucide-react';
+import { Globe, Mail, Award, GraduationCap } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
 export default function MinimalTheme({ data, projects }: ThemeProps) {
@@ -17,15 +17,11 @@ export default function MinimalTheme({ data, projects }: ThemeProps) {
             <a href={`mailto:${data.email}`} className="text-gray-600 hover:text-black transition-colors">
               <Mail className="w-5 h-5" />
             </a>
-            {data.socialLinks.map((link) => {
-              const Icon = link.platform.toLowerCase() === 'github' ? Globe : 
-                           link.platform.toLowerCase() === 'linkedin' ? Globe : Globe;
-              return Icon ? (
-                <a key={link.platform} href={link.url} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black transition-colors">
-                  <Icon className="w-5 h-5" />
-                </a>
-              ) : null;
-            })}
+            {data.socialLinks.map((link) => (
+              <a key={link.platform} href={link.url} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-black transition-colors" title={link.platform}>
+                <Globe className="w-5 h-5" />
+              </a>
+            ))}
           </div>
         </header>
 
@@ -41,6 +37,48 @@ export default function MinimalTheme({ data, projects }: ThemeProps) {
                     <h4 className="text-lg font-semibold">{exp.role}</h4>
                     <div className="text-gray-600 mb-3">{exp.company}</div>
                     <p className="text-gray-700 leading-relaxed">{exp.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Education Section */}
+        {data.education?.length > 0 && (
+          <section className="mb-20">
+            <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-8">Education</h3>
+            <div className="space-y-8">
+              {data.education.map((edu, i) => (
+                <div key={i} className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-8">
+                  <div className="text-gray-500 text-sm mt-1">{edu.duration}</div>
+                  <div className="md:col-span-3">
+                    <h4 className="text-lg font-semibold">{edu.degree} in {edu.field}</h4>
+                    <div className="text-gray-600">{edu.institution}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Certifications Section */}
+        {data.certifications?.length > 0 && (
+          <section className="mb-20">
+            <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-8">Certifications</h3>
+            <div className="space-y-4">
+              {data.certifications.map((cert, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <Award className="w-5 h-5 text-gray-400 mt-0.5 shrink-0" />
+                  <div>
+                    {cert.url ? (
+                      <a href={cert.url} target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline underline-offset-2">
+                        {cert.name}
+                      </a>
+                    ) : (
+                      <span className="font-semibold">{cert.name}</span>
+                    )}
+                    <div className="text-gray-500 text-sm">{cert.issuer} · {cert.date}</div>
                   </div>
                 </div>
               ))}
@@ -113,3 +151,4 @@ export default function MinimalTheme({ data, projects }: ThemeProps) {
     </div>
   );
 }
+
