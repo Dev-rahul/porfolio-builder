@@ -1,5 +1,5 @@
 import { ThemeProps } from './types';
-import { Globe, Mail, Terminal, ChevronRight, GraduationCap, Award } from 'lucide-react';
+import { Globe, Mail, Terminal, ChevronRight, GraduationCap, Award, MapPin, Phone } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
 export default function DeveloperTheme({ data, projects }: ThemeProps) {
@@ -39,9 +39,18 @@ export default function DeveloperTheme({ data, projects }: ThemeProps) {
             )}
             <h1 className="text-4xl md:text-6xl font-bold mb-4 text-neutral-100">{data.name}</h1>
             <h2 className="text-xl md:text-2xl text-emerald-400 mb-6">{'>'} {data.title}</h2>
-            <p className="text-neutral-400 leading-relaxed max-w-2xl text-lg">{data.bio}</p>
+            <p className="text-neutral-400 leading-relaxed max-w-2xl text-lg mb-8">{data.bio}</p>
             
-            <div className="flex gap-6 mt-8">
+            <div className="flex flex-col sm:flex-row gap-4 mb-8 text-neutral-400 font-mono text-sm">
+              {data.location && (
+                <span className="flex items-center gap-2"><MapPin className="w-4 h-4 text-emerald-500" /> {data.location}</span>
+              )}
+              {data.phone && (
+                <span className="flex items-center gap-2"><Phone className="w-4 h-4 text-emerald-500" /> {data.phone}</span>
+              )}
+            </div>
+
+            <div className="flex gap-6 mt-4">
               <a href={`mailto:${data.email}`} className="text-neutral-400 hover:text-emerald-400 transition-colors flex items-center gap-2">
                 <Mail className="w-5 h-5" /> <span>Email</span>
               </a>

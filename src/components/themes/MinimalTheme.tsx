@@ -1,5 +1,5 @@
 import { ThemeProps } from './types';
-import { Globe, Mail, Award, GraduationCap } from 'lucide-react';
+import { Globe, Mail, Award, GraduationCap, MapPin, Phone } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
 export default function MinimalTheme({ data, projects }: ThemeProps) {
@@ -20,10 +20,18 @@ export default function MinimalTheme({ data, projects }: ThemeProps) {
           )}
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">{data.name}</h1>
           <h2 className="text-xl md:text-2xl text-gray-600 font-light mb-6">{data.title}</h2>
-          <p className="text-lg text-gray-700 leading-relaxed max-w-2xl">{data.bio}</p>
+          <p className="text-lg text-gray-700 leading-relaxed max-w-2xl mb-8">{data.bio}</p>
 
+          <div className="flex flex-wrap gap-6 mb-8 text-sm text-gray-600">
+            {data.location && (
+              <span className="flex items-center gap-2"><MapPin className="w-4 h-4" /> {data.location}</span>
+            )}
+            {data.phone && (
+              <span className="flex items-center gap-2"><Phone className="w-4 h-4" /> {data.phone}</span>
+            )}
+          </div>
           
-          <div className="flex gap-4 mt-8">
+          <div className="flex gap-4">
             <a href={`mailto:${data.email}`} className="text-gray-600 hover:text-black transition-colors">
               <Mail className="w-5 h-5" />
             </a>

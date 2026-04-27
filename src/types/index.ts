@@ -35,8 +35,10 @@ export interface PortfolioData {
   bio: string;
   profileImage?: string;
   email: string;
+  location?: string;
+  phone?: string;
   socialLinks: SocialLink[];
-  theme: 'minimal' | 'modern' | 'developer';
+  theme: 'minimal' | 'modern' | 'developer' | 'bento' | 'glass' | 'brutalist' | 'timeline' | 'cyberpunk' | 'creative' | 'zen';
   skills: SkillCategory[];
   experience: Experience[];
   education: Education[];

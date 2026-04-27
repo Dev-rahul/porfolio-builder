@@ -1,5 +1,6 @@
 import { ThemeProps } from './types';
 import { Globe, Mail, ExternalLink, Code, GraduationCap, Award } from 'lucide-react';
+import { MapPin, Phone } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
 export default function ModernTheme({ data, projects }: ThemeProps) {
@@ -20,7 +21,16 @@ export default function ModernTheme({ data, projects }: ThemeProps) {
             )}
             <h1 className="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-md">{data.name}</h1>
             <h2 className="text-xl md:text-3xl font-medium text-white/90 mb-6">{data.title}</h2>
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">{data.bio}</p>
+            <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-6">{data.bio}</p>
+
+            <div className="flex flex-wrap gap-4 mb-8 text-sm font-medium text-white/90">
+              {data.location && (
+                <span className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full border border-white/20"><MapPin className="w-4 h-4" /> {data.location}</span>
+              )}
+              {data.phone && (
+                <span className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full border border-white/20"><Phone className="w-4 h-4" /> {data.phone}</span>
+              )}
+            </div>
             
             <div className="flex flex-wrap gap-4">
               <a href={`mailto:${data.email}`} className="bg-white text-indigo-600 hover:bg-indigo-50 px-6 py-3 rounded-full font-semibold transition-colors flex items-center gap-2 shadow-lg">

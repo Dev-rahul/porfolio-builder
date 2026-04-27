@@ -34,6 +34,8 @@ export function getPortfolioData(): PortfolioData {
     bio: portfolioData.bio || "Your bio here.",
     profileImage: portfolioData.profileImage,
     email: portfolioData.email || "hello@example.com",
+    location: portfolioData.location || "London, UK",
+    phone: portfolioData.phone || "+44 123 456 7890",
     socialLinks: portfolioData.socialLinks || [],
     theme,
     skills: portfolioData.skills || [],

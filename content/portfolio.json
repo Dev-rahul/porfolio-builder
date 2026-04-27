@@ -4,6 +4,8 @@
   "bio": "I'm a passionate full-stack developer with 5 years of experience building modern web applications. I specialize in React, Node.js, and cloud architecture.",
   "profileImage": "/images/profile.png",
   "email": "hello@rahulmurali.me",
+  "location": "London, UK",
+  "phone": "+44 123 456 7890",
   "socialLinks": [
     {
       "platform": "GitHub",
